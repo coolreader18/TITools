@@ -36,7 +36,8 @@ programs = tiget@EXEEXT@ \
 	   tiput@EXEEXT@ \
 	   tirm@EXEEXT@ \
 	   tiscr@EXEEXT@ \
-	   tidump@EXEEXT@
+	   tidump@EXEEXT@ \
+	   ticp@EXEEXT@
 
 all: $(programs)
 
@@ -96,6 +97,11 @@ tiscr@EXEEXT@: tiscr.@OBJEXT@ common.@OBJEXT@
 	$(link) -o tiscr@EXEEXT@ tiscr.@OBJEXT@ common.@OBJEXT@ $(libs)
 tiscr.@OBJEXT@: tiscr.c titools.h
 	$(compile) -c $(srcdir)/tiscr.c
+
+ticp@EXEEXT@: ticp.@OBJEXT@ common.@OBJEXT@
+	$(link) -o ticp@EXEEXT@ ticp.@OBJEXT@ common.@OBJEXT@ $(libs)
+ticp.@OBJEXT@: ticp.c titools.h
+	$(compile) -c $(srcdir)/ticp.c
 
 clean:
 	rm -f $(programs)

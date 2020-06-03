@@ -1,0 +1,9 @@
+/src/*
+!/src/**/
+!/src/*.*
+
+*.o
+Makefile
+config.log
+config.h
+config.status
